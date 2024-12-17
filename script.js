@@ -11,10 +11,15 @@
           data.forEach(pizzeria => {
             html += `
               <div class="pizzeria">
+              <div class="pizzeria-title">
               <h2>${pizzeria.name}</h2>
-              <p><strong>Notre note :</strong> ${pizzeria.rating}/5</p><br>
-              <p><strong>Leur adresse:</strong> ${pizzeria.address}</p><br>
+              <p class="rating">${pizzeria.rating} étoiles</p>
+              </div>
+              <p class="location">${pizzeria.address}</p>
+              <div class="comment">
+              <h3>On en pense quoi ?</h3>
               <p>${pizzeria.comment}</p>
+              </div>
             </div>
             `;
           });
