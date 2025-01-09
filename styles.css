@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&display=swap');
 /* Reset some defaults */
 * {
     margin: 0;
@@ -7,22 +8,10 @@
   
   /* Body */
   body {
-    font-family: Arial, sans-serif;
+    
     background-color: #171717;
     color: #fff;
     overflow-x: hidden;
-  }
-
-  body {
-    font-family: 'Fustat', sans-serif;
-  }
-  
-  h1, h2 {
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  h2 {
-    margin:0;
   }
   
   /* Hero Section */
@@ -53,17 +42,9 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding:32px 48px;
     border-radius:4px;
-  }
-  
-  .hero-content h1 {
-    font-size: 4em;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 1.5em;
-    margin-bottom: 30px;
+    font-family:'Fustat', 'Helvetica', 'Arial', sans-serif;
+    font-weight:600;
+    font-size:2em;
   }
 
 /* Main CTA */
@@ -79,7 +60,6 @@
     border-radius: 4px;
     display: block;
     border: 0px;
-    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     box-shadow: 0px 0px 14px -7px #b60c26;
     background-image: linear-gradient(45deg, #FF512F 0%, #b60c26  51%, #FF512F  100%);
@@ -102,70 +82,120 @@
 
   
   /* Pizzerias Section */
-  #pizzerias {
-    padding: 50px 20px;
-  }
   
   .pizzerias-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    width:80%;
+    margin:20px auto;
+    font-family:'Fustat', 'Helvetica', 'Arial', sans-serif;
   }
   
   .pizzeria {
-    padding: 20px;
     border-radius: 4px;
     background-color:#1E1E1E;
   }
-  
-  .pizzeria h2 {
+  .pizzeria-title > h2 {
     color: #fff;
-    
+    height:100%;
+    backdrop-filter: grayscale(80%);
+    line-height:100px;
   }
 
-  .pizzeria-title {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+  .pizzeria-bg {
+    position:relative;
+    height:150px;
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 
-  .pizzeria-title > .rating {
+  .pizzeria-labels {
+    position:absolute;
+    right:left;
+    top:4px;
+    left:2px;
+    width:60%;
+  }
+
+  .pizzeria-labels > * {
     background-image: linear-gradient(45deg, #FF512F 0%, #b60c26  51%, #FF512F  100%);
-    display:flex;
+    display:inline-flex;
+    margin:1px;
     justify-content: center;
     align-items: center;
     text-align:center;
     padding:4px 6px;
     border-radius:4px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size:0.7em;
   }
 
-  .pizzeria > .location {
-    color:#898383;
-    display:inline-block;
-    max-width:75%;
-    margin-bottom:12px;
+  .pizzeria > .text {
+    padding: 12px;
   }
 
-  .pizzeria > .comment {
-    border-top: 1px solid #393939;
-    font-size:14px;
-    padding-top:12px;
+  .text > .pizzeria-info {
+    padding-bottom:20px;
+    border-bottom:1px solid #807e7e;
   }
 
-  .pizzeria > .comment > h3 {
+  a, a:visited {
+    text-decoration: none;
+    color:inherit;
+  }
+
+
+.pizzeria-info > a {
+    box-shadow: inset 0 0 0 0 #1E1E1E;
+    
+    padding:.25rem;
+    transition: all .5s ease-in-out;
     text-transform: uppercase;
-    font-weight:bold;
-    font-size:14px;
-    color:#b60c26;
+    font-size: 0.8em;
+  }
+
+  .pizzeria-info > a:hover {
+    color: #1E1E1E;
+    box-shadow: inset 320px 0 0 0 #fff;
+  }
+
+  .comment {
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+  }
+
+  .comment > h3 {
+    padding-top: 20px;
+    color: #b60c26;
+    font-size:0.8em;
+    text-transform: uppercase;
+  }
+
+  .comment > div {
+    display:flex;
+    justify-content: start;
+    align-items:center;
+    gap:10px;
+  }
+
+  .comment > div > span {
+    font-size:1.2em;
+  }
+
+  .comment > div > p {
+    font-size:0.8em;
   }
   
   @media (max-width: 768px) {
-    .hero-content h1 {
-      font-size: 2.5em;
-    }
-    .hero-content p {
-      font-size: 1.2em;
+
+    .pizzerias-list {
+      width:95%;
     }
   }
+
+  
   

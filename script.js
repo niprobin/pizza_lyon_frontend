@@ -1,6 +1,6 @@
 // ------------------------------------------------------------ NEW JS
 
-const webAppUrl = "https://script.google.com/macros/s/AKfycbwZ5HBq9YuXBLaXEyfZhBtQrXDOAG9ns-wl3N9Dab70ElXFFJllymJkSAXPG1S90mjHhg/exec"; // Replace with your Google Web App URL
+const webAppUrl = "https://opensheet.elk.sh/1PuFhutQPBSHnyl8VZPgyteMux6ughDb-zGv8nmgHQVs/pizza_data"; // Replace with your Google Web App URL
 const pizzeriasContainer = document.getElementById("pizzerias-list");
 
 // Fetch data from the Google Web App
@@ -16,13 +16,23 @@ async function fetchPizzerias() {
   }
 }
 
-// Format a date in "Month Year" format
 function formatDate(dateString) {
-  if (!dateString) return "Unknown Date";
-  
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long" }).format(date);
+  // Define the months in an array
+  const months = [
+    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"
+  ];
+
+  // Split the input string (assumes format "DD/MM/YYYY")
+  const [day, month, year] = dateString.split('/');
+
+  // Convert the month from string to number and get the month name
+  const monthName = months[parseInt(month, 10) - 1]; // Month is 1-indexed
+
+  // Return the formatted string
+  return `${monthName} ${year}`;
 }
+
 
 // Display pizzerias in the container
 function displayPizzerias(pizzerias) {
@@ -39,16 +49,24 @@ function displayPizzerias(pizzerias) {
 
     const pizzeriaHTML = `
     <div class="pizzeria">
-              <img src="${pizzaImage}" />
-              <div class="pizzeria-title">
-              <h2>${pizzeria.pizzeria}</h2>
-              <p class="rating">${pizzeria.note} étoiles</p>
+              <div style="background-image:url(${pizzeriaImage})" class="pizzeria-bg">
+                <div class="pizzeria-labels">
+                  <p class="date">${visitedDate}</p>
+                  <p class="rating">${pizzeria.note}/10</p>
+                  <p class="hood">${pizzeria.arrondissement} arr.</p>
+                </div>
               </div>
-              <p class="location">${pizzeria.addresse}</p>
-              <p class="location">${visitedDate}</p>
-              <div class="comment">
-              <h3>On en pense quoi ?</h3>
-              <p>${pizzeria.commentaire_robin}</p>
+              <div class="text">
+                <div class="pizzeria-info">
+                  <h2>${pizzeria.pizzeria}</h2>
+                  <a href="${pizzeria.google_link}"><i class="fa-solid fa-location-dot"></i>&ensp;${pizzeria.adresse}</a>
+                </div>
+                <div class="comment">
+                <h3>On en pense quoi ?</h3>
+                  <div><span>👨‍💻</span><p><em>"${pizzeria.commentaire_robin}"</p></em></div>
+                  <div><span>👨‍🔧</span><p><em>"${pizzeria.commentaire_viks}"</p></em></div>
+                  <div><span>👩‍🎨</span><p><em>"${pizzeria.commentaire_celia}"</p></em></div>
+                </div>
               </div>
             </div>
     `;
