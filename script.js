@@ -59,7 +59,7 @@ function displayPizzerias(pizzerias) {
               <div class="text">
                 <div class="pizzeria-info">
                   <h2>${pizzeria.pizzeria}</h2>
-                  <a href="${pizzeria.google_link}"><i class="fa-solid fa-location-dot"></i>&ensp;${pizzeria.adresse}</a>
+                  <a href="${pizzeria.google_link_1} href="${pizzeria.google_link_2}"><i class="fa-solid fa-location-dot"></i>&ensp;${pizzeria.adresse}</a>
                 </div>
                 <div class="comment">
                 <h3>On en pense quoi ?</h3>
