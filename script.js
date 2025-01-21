@@ -45,6 +45,9 @@ function displayPizzerias(pizzerias) {
 
     const pizzeriaImage = pizzeria.image_url || "https://via.placeholder.com/80";
     const visitedDate = formatDate(pizzeria.date);
+    const comRob = pizzeria.commentaire_robin || "-";
+    const comViks = pizzeria.commentaire_viks || "-";
+    const comCelia = pizzeria.commentaire_celia || "-";
 
 
     const pizzeriaHTML = `
@@ -59,13 +62,13 @@ function displayPizzerias(pizzerias) {
               <div class="text">
                 <div class="pizzeria-info">
                   <h2>${pizzeria.pizzeria}</h2>
-                  <a href="${pizzeria.google_link_2} href="${pizzeria.google_link_1}"><i class="fa-solid fa-location-dot"></i>&ensp;${pizzeria.adresse}</a>
+                  <i class="fa-solid fa-location-dot"></i>&ensp;${pizzeria.adresse}
                 </div>
                 <div class="comment">
                 <h3>On en pense quoi ?</h3>
-                  <div><span>👨‍💻</span><p><em>"${pizzeria.commentaire_robin}"</p></em></div>
-                  <div><span>👨‍🔧</span><p><em>"${pizzeria.commentaire_viks}"</p></em></div>
-                  <div><span>👩‍🎨</span><p><em>"${pizzeria.commentaire_celia}"</p></em></div>
+                  <div><span>👨‍💻</span><p><em>"${comRob}"</p></em></div>
+                  <div><span>👨‍🔧</span><p><em>"${comViks}"</p></em></div>
+                  <div><span>👩‍🎨</span><p><em>"${comCelia}"</p></em></div>
                 </div>
               </div>
             </div>
