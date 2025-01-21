@@ -53,7 +53,7 @@ function displayPizzerias(pizzerias) {
                 <div class="pizzeria-labels">
                   <p class="date">${visitedDate}</p>
                   <p class="rating">${pizzeria.note}/10</p>
-                  <p class="hood">${pizzeria.arrondissement} arr.</p>
+                  <p class="hood">${pizzeria.arrondissement}</p>
                 </div>
               </div>
               <div class="text">
