@@ -81,7 +81,7 @@ header {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.pizzeria-bg {
+.pizzeria-hero {
   height:30vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -89,22 +89,47 @@ header {
   border-radius: .5rem;
 }
 
-h2 {
-  padding: 10px 0px;
-  margin:0;
+.pizzeria-hero > a {
+  background-color:#1118276b;
+  display:block;
+  z-index:10;
+  height:100%;
+  line-height:30vh;
+  border-radius: .5rem;
   font-size: 1.5rem;
+  font-weight:bold;
+  text-align:center;
+  transition:all 0.2s ease-in-out;
+}
+
+.pizzeria-hero > a:hover {
+  cursor: pointer;
+  color:transparent;
+  background-color:transparent;
 }
 
 .pizzeria-info {
   font-size: 0.8em;
   display: flex;
   flex-direction: column;
-  margin-bottom:10px;
-  gap:5px;
+  margin:10px auto;
+  gap:10px;
   padding: 10px;
   background-color:#111827;
   border-radius:10px;
   box-shadow: rgba(33, 32, 32, 0.4) 0px 2px 8px 0px;
+}
+
+.pizzeria-info > a:hover::after {
+  content: "On y va ? 😊";
+  color:#fff;
+  background-color:#984447;
+  font-weight: bold;
+  padding:3px;
+  border-radius:5px;
+  position:absolute;
+  z-index:1000;
+  transform: translateY(-4px) translateX(5px);
 }
 
 .comment {
@@ -190,4 +215,22 @@ h2 {
   .comment {
     gap: 5px;
   }
+
+  .pizzeria-info > a:hover::after {
+    content: "";
+    display:none;
+  }
+
+  .pizzeria-info > a::after {
+    content: "On y va ? 😊";
+    color:#fff;
+    background-color:#9844476a;
+    font-weight: bold;
+    padding:3px;
+    border-radius:5px;
+    position:absolute;
+    z-index:1000;
+    transform: translateY(-4px) translateX(15px);
+    }
+  
 }

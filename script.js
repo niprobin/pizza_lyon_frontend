@@ -54,9 +54,10 @@ function displayPizzerias(pizzerias) {
 
     const pizzeriaHTML = `
       <div>
-        <div style="background-image:url(${pizzeriaImage})" class="pizzeria-bg"></div>
+        <div style="background-image:url(${pizzeriaImage})" class="pizzeria-hero">
+          <a target="_blank" href="${pizzeria.google_link_2}">${pizzeria.pizzeria}</a>
+        </div>
         <div class="text">
-          <h2>${pizzeria.pizzeria}</h2>
           <div class="pizzeria-info">
             <a target="_blank" href="${pizzeria.google_link_2}">
               <i class="fa-solid fa-map-location-dot"></i>&ensp;${pizzeria.adresse}
