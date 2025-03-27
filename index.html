@@ -10,7 +10,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <title>Body Pizzas | Les meilleures pizzas de Lyon</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href=".g/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
   <link rel="manifest" href="./favicon/site.webmanifest">
@@ -18,10 +18,28 @@
 </head>
 <body>
   <!-- Pizzerias Section -->
-  <section id="pizzerias">
-    <div class="headline"><h1>Les meilleures pizzas de Lyon</h1></div>
+  <header id="pizzerias">
+    <h1>Les meilleures pizzas de Lyon</h1>
+    <div id="controls" class="controls">
+      <div id="filter-container">
+        <label for="filter"></label>
+        <select id="filter">
+          <option value="all">Arrondissement</option>
+        </select>
+      </div>
+      <!--<div id="sort-container">
+        <label for="sort">Trier par :</label>
+        <select id="sort">
+          <option value="date">Date</option>
+          <option value="note">Note</option>
+        </select>
+      </div> -->
+    </div>
+    </header>
+    <main>
     <div class="pizzerias-list" id="pizzerias-list"></div>
-  </section>
+    <div id="pagination-controls"></div>
+  </main>
 
   <script src="script.js"></script>
 </body>
