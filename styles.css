@@ -212,6 +212,12 @@ header {
     padding-bottom: 30px;
   }
 
+  .pizzeria-hero > a:hover {
+    cursor: pointer;
+    color:inherit;
+    background-color:inherit;
+  }
+
   .comment {
     gap: 5px;
   }
