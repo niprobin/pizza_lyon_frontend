@@ -90,16 +90,24 @@ header {
 }
 
 .pizzeria-hero > a {
-  background-color:#1118276b;
-  display:block;
+  background-color:#1118277d;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index:10;
+  width:100%;
   height:100%;
-  line-height:30vh;
   border-radius: .5rem;
   font-size: 1.5rem;
   font-weight:bold;
   text-align:center;
   transition:all 0.2s ease-in-out;
+}
+
+.pizzeria-hero > a > span {
+  font-size:0.6em;
+  font-weight:normal;
 }
 
 .pizzeria-hero > a:hover {
@@ -111,25 +119,16 @@ header {
 .pizzeria-info {
   font-size: 0.8em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin:10px auto;
   gap:10px;
+}
+
+.pizzeria-info > p {
   padding: 10px;
   background-color:#111827;
   border-radius:10px;
   box-shadow: rgba(33, 32, 32, 0.4) 0px 2px 8px 0px;
-}
-
-.pizzeria-info > a:hover::after {
-  content: "On y va ? 😊";
-  color:#fff;
-  background-color:#984447;
-  font-weight: bold;
-  padding:3px;
-  border-radius:5px;
-  position:absolute;
-  z-index:1000;
-  transform: translateY(-4px) translateX(5px);
 }
 
 .comment {
@@ -156,7 +155,6 @@ header {
   display:flex;
   justify-content:center;
   gap:10px;
-  margin:20px;
 }
 
 #pagination-controls button {
@@ -168,6 +166,8 @@ header {
   color: #fff;
   border-radius: 4px;
   transition:all .3s;
+  font-family: 'Fustat', "Helvetica", sans-serif;
+  font-size:1.1em;
 }
 
 #pagination-controls button.active, #pagination-controls button.active:hover {
@@ -215,22 +215,5 @@ header {
   .comment {
     gap: 5px;
   }
-
-  .pizzeria-info > a:hover::after {
-    content: "";
-    display:none;
-  }
-
-  .pizzeria-info > a::after {
-    content: "On y va ? 😊";
-    color:#fff;
-    background-color:#9844476a;
-    font-weight: bold;
-    padding:3px;
-    border-radius:5px;
-    position:absolute;
-    z-index:1000;
-    transform: translateY(-4px) translateX(15px);
-    }
   
 }

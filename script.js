@@ -55,13 +55,10 @@ function displayPizzerias(pizzerias) {
     const pizzeriaHTML = `
       <div>
         <div style="background-image:url(${pizzeriaImage})" class="pizzeria-hero">
-          <a target="_blank" href="${pizzeria.google_link_2}">${pizzeria.pizzeria}</a>
+          <a target="_blank" href="${pizzeria.google_link_2}">${pizzeria.pizzeria}<br><span>${pizzeria.adresse}</span></a>
         </div>
         <div class="text">
           <div class="pizzeria-info">
-            <a target="_blank" href="${pizzeria.google_link_2}">
-              <i class="fa-solid fa-map-location-dot"></i>&ensp;${pizzeria.adresse}
-            </a>
             <p class="rating"><i class="fa-solid fa-star"></i>&ensp;${pizzeria.note}/10</p>
             <p class="date"><i class="fa-solid fa-calendar-days"></i>&ensp;${visitedDate}</p>
           </div>
@@ -102,6 +99,10 @@ function renderPaginationControls(totalItems) {
     button.addEventListener("click", () => {
       currentPage = i;
       displayPizzerias(filteredPizzerias);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // Smooth scrolling effect
+      });
     });
     paginationContainer.appendChild(button);
   }
